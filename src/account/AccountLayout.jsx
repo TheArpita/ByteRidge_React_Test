@@ -10,6 +10,9 @@ function AccountLayout() {
 
     // redirect to home if already logged in
     if (auth) {
+        if (auth.role === "Auditor"){
+            return <Navigate to="/audit" />;
+        }
         return <Navigate to="/" />;
     }
 
